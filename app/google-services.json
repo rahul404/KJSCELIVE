@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "363819639461",
+    "firebase_url": "https://kjscelive-495e2.firebaseio.com",
+    "project_id": "kjscelive-495e2",
+    "storage_bucket": "kjscelive-495e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363819639461:android:f074dd9a2bf6e932",
+        "android_client_info": {
+          "package_name": "com.example.enzo.kjscelive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "363819639461-njushf8o333knlipaso3t7c3v3d9lrjp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.enzo.kjscelive",
+            "certificate_hash": "07a395ff7eec86d80fc625a1884ce297d2c4c24b"
+          }
+        },
+        {
+          "client_id": "363819639461-mhmhqcsv5jdqam449tmh4lvq6muqq55l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb-EwJyIko04KchNKatLNVbCAooj3dBGg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "363819639461-mhmhqcsv5jdqam449tmh4lvq6muqq55l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

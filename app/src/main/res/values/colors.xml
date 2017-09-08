@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ebecec</color>
+    <color name="colorPrimaryDark">#747474</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorImageTemp">#999</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorBrightOrange">#ff7428</color>
+    <color name="colorMediumGray">#5b5b5b</color>
+    <color name="colorDarkGray">#747474</color>
+    <color name="colorLightGray">#ebecec</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorMediumBlack">#333</color>
+    <color name="colorNewsBackground">#22ffffff</color>
+</resources>

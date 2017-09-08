@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<group android:checkableBehavior="single"> used when creating a checkbox-->
+    <group>
+        <item
+            android:id="@+id/about_kjsce"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/about_kjsce"/>
+
+    </group>
+    <item android:title="@string/technical">
+        <menu>
+            <item
+                android:id="@+id/csi"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/csi"/>
+            <item
+                android:id="@+id/ieee"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/ieee"/>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/gallery"
+        android:icon="@drawable/ic_menu_gallery"
+        android:title="@string/gallery"/>
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share"/>
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send"/>
+        </menu>
+    </item>
+
+</menu>

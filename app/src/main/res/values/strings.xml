@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">KJSCELIVE</string>
+    <string name="demo_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+        ornare enim diam, vel convallis odio placerat condimentum. In convallis tincidunt diam, eu
+        tristique est convallis sed. Suspendisse accumsan, turpis a ornare aliquam, </string>
+    <string name="add_to_calendar">add to calendar</string>
+    <string name="share">share</string>
+    <string name="news">News</string>
+    <string name="feeds">Feeds</string>
+    <string name="events">Events</string>
+    <string name="title_activity_feed_pager_activity">FeedPagerACtivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="calendar_event_description">Added by the KJSCELIVE app</string>
+    <string name="title_activity_detailed_feed_view_pager">DetailedFeedViewPagerActivity</string>
+    <string name="share_error">Couldn\'t share. Please try again later</string>
+    <string name="add_to_calendar_error">Couldn\'t bookmark. Please try again later</string>
+    <string name="share_intent_extra_text">Put this text here to share something </string>
+    <string name="share_intent_dialog_message">Put message here for sharing dialogue</string>
+    <string name="about_kjsce">About KJSCE</string>
+    <string name="stuco">Student Council</string>
+    <string name="technical">Technical</string>
+    <string name="csi">CSI</string>
+    <string name="ieee">IEEE</string>
+    <string name="couldnt_refresh">Couldn\'t Refresh. Please try again later </string>
+    <string name="gallery">Gallery</string>
+</resources>
