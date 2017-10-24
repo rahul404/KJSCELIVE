@@ -1,7 +1,6 @@
 package com.example.enzo.kjscelive;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+
 import android.util.Log;
 
 import com.google.gson.annotations.SerializedName;
@@ -11,11 +10,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 /**
  * Created by enzo on 8/9/2017.
@@ -34,6 +31,9 @@ public class Feed implements FeedConstants {
     private String mFeedDate;//date of event/news
     @SerializedName("venue")
     private String mFeedVenue;//venue of the feed
+
+
+
     @SerializedName("publisher")
     private long mFeedPublisherId;//unique id given to the publisher
     @SerializedName("type")
@@ -52,6 +52,19 @@ public class Feed implements FeedConstants {
     private List<String> mFeedLinks;//related links
     @SerializedName("phone_no")
     private List<String> mPhone;//contact numbers
+    @SerializedName("is_liked")
+    private boolean mFeedIsLiked;//true if the feed is liked by the user
+
+    private boolean mIsBookmarked;//true if the event is added in the calendar
+
+    public void setLiked(boolean liked) {
+        mFeedIsLiked = liked;
+    }
+
+    public boolean isLiked() {
+
+        return mFeedIsLiked;
+    }
 
     private String mFeedTime;//holds the time for the feed
 
@@ -64,7 +77,6 @@ public class Feed implements FeedConstants {
         return mIsBookmarked;
     }
 
-    private boolean mIsBookmarked;//true if the event is added in the calendar
 
     public void setFeedTime(String feedTime) {
         mFeedTime = feedTime;
@@ -227,7 +239,9 @@ public class Feed implements FeedConstants {
         setFeedHasMultipleImages(obj.getInt("has_multiple_images"));
         setFeedPublisherName(obj.getString("name"));
         setFeedPublisherEmail(obj.getString("email"));
+        Log.d("URL","inside feed url = "+getFeedImageUrl());
         setFeedCommittee(obj.getString("committee_name"));
+        setFeedImageUrl(obj.getString("image"));
         JSONArray tempArray=obj.getJSONArray("link");
         ArrayList<String> tempList=new ArrayList<>();
         for(int j=0;j<tempArray.length();j++){
@@ -240,7 +254,14 @@ public class Feed implements FeedConstants {
             tempList.add(tempArray.getString(j));
         }
         setPhone(tempList);
-        //f.setFeedImageUrl();TODO put the url thingy
+        String isLiked = obj.getString("is_liked");
+        if(isLiked.equals("0")){
+            setLiked(false);
+        }
+        else{
+            setLiked(true);
+        }
+        Log.d("LIKE","liked = "+isLiked()+" json value = "+isLiked);
         Log.i(TAG,"FEED: "+toString());
     }
 }

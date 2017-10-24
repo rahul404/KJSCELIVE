@@ -2,35 +2,28 @@ package com.example.enzo.kjscelive;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v4.view.ViewPager;
+
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.squareup.picasso.Picasso;
 
 public class FeedPagerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,FeedConstants {
+
+
+
 
     public static Intent newIntent(Context context){
         Intent i=new Intent(context,FeedPagerActivity.class);
@@ -39,9 +32,6 @@ public class FeedPagerActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        String token = FirebaseInstanceId.getInstance().getToken();
-//        Log.d("FIRE","TOKEN = "+token); TODO: FIREBASE TOKEN
-
         setContentView(R.layout.activity_feed_pager_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -84,7 +74,7 @@ public class FeedPagerActivity extends AppCompatActivity
         };
         drawer.setDrawerListener(toggle);
         toggle.setDrawerIndicatorEnabled(false); //disable "hamburger to arrow" drawable
-        //toggle.setHomeAsUpIndicator(R.mipmap.ic_launcher); //set your own
+        //toggle.setHomeAsUpIndicator(R.mipm); //set your own
         /******end of code **********/
 
 
@@ -100,11 +90,14 @@ public class FeedPagerActivity extends AppCompatActivity
         }
         DataList dataList=DataList.getInstance(getApplicationContext());
         DataCommunicator dc =DataCommunicator.getInstance(getApplicationContext());
-        String url=dc.buildUrlCard("http://"+IpClass.getInstance().getIp()+FeedConstants.URL_FEED);
+        String url=dc.buildUrlCard("http://"+IpClass.getInstance().getIp()+FeedConstants.URL_FEED,
+                IpClass.getInstance().getEmail());
         dc.insertFeedList(url);
-        url=dc.buildUrlNews("http://"+IpClass.getInstance().getIp()+FeedConstants.URL_FEED);
+        url=dc.buildUrlNews("http://"+IpClass.getInstance().getIp()+FeedConstants.URL_FEED,
+                IpClass.getInstance().getEmail());
         dc.insertNewsList(url);
-        url=dc.buildUrlEvent("http://"+IpClass.getInstance().getIp()+FeedConstants.URL_FEED);
+        url=dc.buildUrlEvent("http://"+IpClass.getInstance().getIp()+FeedConstants.URL_FEED,
+                IpClass.getInstance().getEmail());
         dc.insertEventList(url);
     }
 
@@ -186,14 +179,14 @@ public class FeedPagerActivity extends AppCompatActivity
         drawer.closeDrawer(Gravity.RIGHT);
         return true;
     }
-    @Override
-    protected void onPause(){
-        super.onPause();
-        //ImageManager.getInstance(getApplicationContext()).deleteFiles();
-    }
+
     @Override
     protected void onDestroy(){
         super.onDestroy();
         ImageManager.getInstance(getApplicationContext()).deleteFiles();
     }
+
+
+
+
 }

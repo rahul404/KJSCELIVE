@@ -27,7 +27,7 @@
                     android:src="@mipmap/ic_kjscelive"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:paddingLeft="10dp"/>
+                    android:layout_marginLeft="20dp" />
                 <ImageView
                     android:id="@+id/hambuger"
                     android:layout_alignParentRight="true"

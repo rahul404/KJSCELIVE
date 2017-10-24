@@ -7,8 +7,8 @@
                 android:layout_height="wrap_content"
                 card_view:cardElevation="16dp"
                 card_view:cardCornerRadius="2dp"
-                android:layout_marginRight="6dp"
-                android:layout_marginLeft="6dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="4dp"
                 android:layout_marginBottom="24dp">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,7 +18,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-        <!--TODO: add the gradient-->
+
         <ImageView
             android:id="@+id/feed_event_image_row"
             android:layout_width="match_parent"
@@ -65,9 +65,12 @@
             android:textColor="@color/colorBrightOrange"
             android:paddingLeft="10dp"/>
 
-        <com.codesgood.views.JustifiedTextView
+        <com.example.enzo.kjscelive.JustifyTextView
             android:id="@+id/feed_event_content_row"
-            android:textSize="14sp"
+            android:clickable="false"
+            android:focusable="false"
+            android:layout_marginLeft="7dp"
+            android:textSize="16sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/demo_content"

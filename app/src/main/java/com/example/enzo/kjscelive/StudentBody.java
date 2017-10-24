@@ -7,7 +7,7 @@ package com.example.enzo.kjscelive;
 public class StudentBody {
     private String mName;
     private String mDescription;
-    private int mImage=R.drawable.ic_launcher;
+    private int mImage=R.mipmap.ic_launcher;
     public StudentBody(){
 
     }

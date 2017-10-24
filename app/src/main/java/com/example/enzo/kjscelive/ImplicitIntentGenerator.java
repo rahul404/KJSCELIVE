@@ -2,21 +2,16 @@ package com.example.enzo.kjscelive;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+
 import android.net.Uri;
-import android.os.Environment;
+
 import android.provider.CalendarContract;
 import android.support.v4.content.FileProvider;
-import android.text.TextUtils;
+
 import android.util.Log;
-import android.widget.ImageView;
-import android.widget.Toast;
+
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

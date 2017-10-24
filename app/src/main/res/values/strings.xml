@@ -27,4 +27,5 @@
     <string name="ieee">IEEE</string>
     <string name="couldnt_refresh">Couldn\'t Refresh. Please try again later </string>
     <string name="gallery">Gallery</string>
+
 </resources>

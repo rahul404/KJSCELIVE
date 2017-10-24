@@ -1,11 +1,10 @@
 package com.example.enzo.kjscelive;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,7 +12,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.widget.ResourceCursorAdapter;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -26,12 +24,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.enzo.kjscelive.DataList.FeedListChangeListener;
-import com.squareup.picasso.MemoryPolicy;
-import com.squareup.picasso.NetworkPolicy;
-import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
+
 import java.util.List;
+
 
 /**
  * Created by enzo on 8/9/2017.
@@ -39,8 +35,13 @@ import java.util.List;
 
 public class FeedFragment extends Fragment implements FeedConstants{
 
+
+
     private static final String ARGUMENT="com.example.enzo.kjscelive.FeedFragment";
+    private static final String ARGUMENT_ID="com.example.enzo.kjscelive.FeedFragment.mID";
+    private static final int REQUEST_CODE_CALENDAR=1;//constant for result code for startActivityForResult
     private int mDataListType;//hold the constant that represents the data list type SHOW_CARDS ,SHOW_NEWS and SHOW_EVENTS
+    private int mId;//unique id for each fragment
     private int posChanged=-1;//hold the position of selected card
     private RecyclerView mFeedRecyclerView; // this holds a reference to the recycler view in the fragment
     private FeedAdapter mAdapter;//acts as the adapter for the recycler view
@@ -57,9 +58,10 @@ public class FeedFragment extends Fragment implements FeedConstants{
     /*************************** listType ******************************
      *represents any one of the constants from the SHOW_CARDS ,SHOW_NEWS and SHOW_EVENTS
      * */
-    public static FeedFragment newInstance(Context context,int listType){
+    public static FeedFragment newInstance(Context context,int listType,int id){
         Bundle args=new Bundle();
         args.putInt(ARGUMENT,listType);
+        args.putInt(ARGUMENT_ID,id);
         Log.d(TAG,"argument set to "+listType);
         FeedFragment f=new FeedFragment();
         f.setArguments(args);
@@ -69,6 +71,7 @@ public class FeedFragment extends Fragment implements FeedConstants{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        Log.d("SWIPE","inside on create ");
         View v= inflater.inflate(R.layout.fragment_feed,container,false);
         //following code initializes the recycler view
         mFeedRecyclerView=(RecyclerView)v.findViewById(R.id.feed_recycler_view);
@@ -87,10 +90,10 @@ public class FeedFragment extends Fragment implements FeedConstants{
                     Toast.makeText(getActivity(),R.string.couldnt_refresh,Toast.LENGTH_SHORT).show();
                     mSwipeRefresh.setRefreshing(false);
                 }
-                updateUI();
                 if(type==INSERTION_BEGIN){
                     mSwipeRefresh.setRefreshing(false);
                 }
+                mAdapter.notifyDataSetChanged();
             }
         };
         DataList.getInstance(context).setFeedListChangeListener(mFeedListChangeListener);
@@ -98,6 +101,7 @@ public class FeedFragment extends Fragment implements FeedConstants{
         Bundle args=getArguments();
         if(args!=null){
             mDataListType=args.getInt(ARGUMENT);
+            mId = args.getInt(ARGUMENT_ID);
         }
         else{
             mDataListType=SHOW_CARDS;
@@ -106,26 +110,27 @@ public class FeedFragment extends Fragment implements FeedConstants{
         scrollListener = new EndlessRecyclerViewScrollListener(lm) {
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view,int scrollType) {
-                Log.d("LISTENER","on down scroll was called on "+mDataListType );
+//                MainActivity a = (MainActivity)getActivity();
+//                int index = a.getViewPager().getCurrentItem();
+                Log.d("SWIPE","on down scroll was called on "+mDataListType );
                 // Triggered only when new data needs to be appended to the list
                 Log.d(TAG,"last page ="+page);
                 Context c=getActivity();
                 DataCommunicator dc=DataCommunicator.getInstance(c);
                 String url="";
                 long cardId=0;
-                if(scrollType == SCROLL_UP){
-                    url=dc.buildUrlYoungerCards(DataList.getInstance(c).getMaxOfType(mDataListType),mDataListType);
+                if(scrollType == SCROLL_DOWN){
+                    url=dc.buildUrlOlderCards(DataList.getInstance(c).getMinOfType(mDataListType),mDataListType,
+                            IpClass.getInstance().getEmail());
                 }
-                else if(scrollType == SCROLL_DOWN){
-                    url=dc.buildUrlOlderCards(DataList.getInstance(c).getMinOfType(mDataListType),mDataListType);
-                }
-                dc.insertList(url,mDataListType);
+                dc.appendList(url,mDataListType);
                 Log.d("LISTENER","on down scroll was called on "+mDataListType);
             }
         };
         mFeedRecyclerView.addOnScrollListener(scrollListener);
         mSwipeRefresh =(SwipeRefreshLayout)v.findViewById(R.id.feed_swipe_refresh);
         setSwipeRefresh();
+        Log.d("SWIPE","last line of oncreate "+mId);
         return v;
     }
     //initializes everything related to swipe refresh layout
@@ -135,7 +140,8 @@ public class FeedFragment extends Fragment implements FeedConstants{
             public void onRefresh() {
                 Context c=getActivity();
                 DataCommunicator dc=DataCommunicator.getInstance(c);
-                String url=dc.buildUrlYoungerCards(DataList.getInstance(c).getMaxOfType(mDataListType),mDataListType);
+                String url=dc.buildUrlYoungerCards(DataList.getInstance(c).getMaxOfType(mDataListType),mDataListType,
+                        IpClass.getInstance().getEmail());
                 Log.d(TAG,"URL= "+url+" min value =" +DataList.getInstance(c).getMinOfType(mDataListType));
                 dc.insertList(url,mDataListType);
                 Log.d("LISTENER","on down scroll was called on "+mDataListType);
@@ -155,6 +161,7 @@ public class FeedFragment extends Fragment implements FeedConstants{
         }
         else
         {
+            mFeedRecyclerView.setAdapter(mAdapter);
             mAdapter.notifyDataSetChanged();
             //mAdapter.notifyItemChanged(posChanged);
         }
@@ -166,7 +173,18 @@ public class FeedFragment extends Fragment implements FeedConstants{
         Log.d(TAG,"rendered visible "+mDataListType);
         updateUI();
     }
-
+    @Override
+    public void onActivityResult(int requestCode ,int resultCode,Intent result){
+        if(requestCode == REQUEST_CODE_CALENDAR){
+            if(requestCode == Activity.RESULT_OK){
+                //mAddToCalendarImageView.setImageDrawable(getResources().getDrawable(R.mipmap.ic_calendar));
+                Toast.makeText(getActivity(),"RESULT_OK "+result,Toast.LENGTH_SHORT).show();
+            }
+            else{
+                Toast.makeText(getActivity(),"RESULT_CANCEL "+result,Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
     private class FeedHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
@@ -175,7 +193,8 @@ public class FeedFragment extends Fragment implements FeedConstants{
         private ImageView mImageView;
         private TextView mTitleTextView;
         private TextView mVenueTextView;
-        private TextView mContentTextView;
+        //private TextView mContentTextView;
+        private JustifyTextView mContentTextView;
         private ImageView mShareImageView;
         private ImageView mAddToCalendarImageView;
         private FeedHolder(View itemView)
@@ -183,7 +202,8 @@ public class FeedFragment extends Fragment implements FeedConstants{
             super(itemView);
             mTitleTextView=(TextView)itemView.findViewById(R.id.feed_event_title_row);
             mVenueTextView=(TextView)itemView.findViewById(R.id.feed_event_small_venue_row);
-            mContentTextView=(TextView)itemView.findViewById(R.id.feed_event_content_row);
+            //mContentTextView=(TextView) itemView.findViewById(R.id.feed_event_content_row);
+            mContentTextView=(JustifyTextView) itemView.findViewById(R.id.feed_event_content_row);
             mImageView=(ImageView)itemView.findViewById(R.id.feed_event_image_row);
             mShareImageView=(ImageView)itemView.findViewById(R.id.feed_event_share_row);
             mAddToCalendarImageView=(ImageView)itemView.findViewById(R.id.feed_event_add_to_calendar_row);
@@ -200,18 +220,21 @@ public class FeedFragment extends Fragment implements FeedConstants{
             mTitleTextView.setText(mFeed.getFeedTitle());
             mVenueTextView.setText(mFeed.getFeedVenue());
             String content=mFeed.getFeedContent();
-            mContentTextView.setText(content.substring(0,content.indexOf(' ',262)));
-            final String imageUrl = "http://"+IpClass.getInstance().getIp()+"/images" +
-                    "/"+((mFeed.getFeedId()%6)+1)+".jpg";
-//            Picasso.with(getActivity()).load(imageUrl).fit().memoryPolicy(MemoryPolicy.NO_CACHE )
-//                    .networkPolicy(NetworkPolicy.NO_CACHE).into(mImageView);//TODO :change this code check if picasso or volley
-            Picasso.with(getActivity()).load(imageUrl).memoryPolicy(MemoryPolicy.NO_CACHE )
-                    .networkPolicy(NetworkPolicy.NO_CACHE).into(mImageView);//TODO :change this code check if picasso or volley
+            if(content.length()>262){
+                mContentTextView.setText(content.substring(0,content.indexOf(' ',262)));
+            }
+            else{
+                mContentTextView.setText(content);
+            }
+            final String imageUrl = mFeed.getFeedImageUrl();
+//            Picasso.with(getActivity()).load(imageUrl).memoryPolicy(MemoryPolicy.NO_CACHE )
+//                    .networkPolicy(NetworkPolicy.NO_CACHE).into(mImageView);//
+            DataCommunicator.getInstance(getActivity()).loadImage(mImageView,mFeed.getFeedImageUrl());
 
             mShareImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //TODO: open sharable options
+
 
                     Log.d("INTENT","inside share image view");
                     //writing the image to the cache
@@ -265,9 +288,8 @@ public class FeedFragment extends Fragment implements FeedConstants{
                     Intent i= ImplicitIntentGenerator.getCalendarIntent(mFeed);
                     if(i!=null){
                         mFeed.setBookmarked(true);
-                        mAddToCalendarImageView.setImageDrawable(getResources().getDrawable(R.mipmap.ic_calendar));
-                        getActivity().startActivity(i);
-                        //TODO do startACtivityForResult
+                        FeedFragment.this.startActivityForResult(i,REQUEST_CODE_CALENDAR);
+
                     }
                     else{
                         Toast.makeText(getActivity(),R.string.add_to_calendar_error, Toast.LENGTH_SHORT).show();
@@ -326,4 +348,9 @@ public class FeedFragment extends Fragment implements FeedConstants{
             return mFeeds.size();
         }
     }
+    /*
+    * TODO: on RESULT_OK of the activity send the server your email id
+    *TODO: when the user likes or views any card, update the firebase and the the like server table for views
+    * TODO:and likes this will also enable us whether the user liked something or not thus
+    * TODO: solving the problem of saving which card was liked by the user */
 }

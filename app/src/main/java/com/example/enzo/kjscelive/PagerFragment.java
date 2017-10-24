@@ -3,8 +3,7 @@ package com.example.enzo.kjscelive;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewGroupCompat;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,7 +24,7 @@ public class PagerFragment extends Fragment implements FeedConstants{
         View v = inflater.inflate(R.layout.fragment_pager,container,false);
         //setting the view pager
         ViewPager mViewPager =(ViewPager)v.findViewById(R.id.pager);
-        mViewPager.setAdapter(new FragmentStatePagerAdapter(getActivity().getSupportFragmentManager()) {
+        mViewPager.setAdapter(new FragmentPagerAdapter(getActivity().getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
                 int listType=SHOW_CARDS;
@@ -43,7 +42,8 @@ public class PagerFragment extends Fragment implements FeedConstants{
                         Log.i(TAG,"position = "+position+" list type ="+listType);
                         break;
                 }
-                return FeedFragment.newInstance(getActivity(),listType);
+                return FeedFragment.newInstance(getActivity(),listType,position
+                );
             }
             @Override
             public int getCount() {
@@ -64,6 +64,23 @@ public class PagerFragment extends Fragment implements FeedConstants{
         });
         TabLayout mTabLayout = (TabLayout)v.findViewById(R.id.tabs);
         mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                int index = tab.getPosition();
+                //TODO :  do scroll up on reselected of tab
+            }
+        });
         return v;
     }
 }

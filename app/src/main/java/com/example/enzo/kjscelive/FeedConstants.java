@@ -33,4 +33,6 @@ public interface FeedConstants {
     int COULDNT_REFRESH=4;//constant to denote the field couldnt be refreshed
     long HAMBURGER_ICON_ANIMATION_DELAY=400;//delay in ms for animation in hamburger icon
     String DOUBLE_FRAGMENT_TAG="DOUBLE_FRAGMENT_TAG";//string tag for all the popup fragments
+    String LIKED_URL = "/like.php";//url for the like php file
+    String REGISTER_URL = "/register.php";//url for the register.php
 }

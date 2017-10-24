@@ -3,7 +3,6 @@ package com.example.enzo.kjscelive;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -40,7 +39,8 @@ public class FeedActivity extends AppCompatActivity implements FeedConstants{
                         Log.i(TAG,"position = "+position+" list type ="+listType);
                         break;
                 }
-                return FeedFragment.newInstance(FeedActivity.this,listType);
+                return FeedFragment.newInstance(FeedActivity.this,listType,position
+                );
             }
             @Override
             public int getCount() {

@@ -5,12 +5,7 @@ import android.os.Handler;
 import android.util.Log;
 
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -210,6 +205,9 @@ public class DataList implements FeedConstants{
 
     //sets the mMinNewsId to its proper value
     public void updateMinNewsId(){
+        if(mNewsList.size()<=0){
+            return;
+        }
         if( mMinNewsId <=0 || mMinNewsId>mNewsList.get(mNewsList.size()-1).getFeedId() ){
             mMinNewsId=mNewsList.get(mNewsList.size()-1).getFeedId();
         }
@@ -218,6 +216,9 @@ public class DataList implements FeedConstants{
 
     //sets the mMinEventId to its proper value
     public void updateMinEventId(){
+        if(mEventList.size()<=0){
+            return;
+        }
         if( mMinEventId <=0 || mMinEventId>mEventList.get(mEventList.size()-1).getFeedId() ){
             mMinEventId=mEventList.get(mEventList.size()-1).getFeedId();
         }
@@ -226,6 +227,9 @@ public class DataList implements FeedConstants{
 
     //sets the mMinEventId to its proper value
     public void updateMinFeedId(){
+        if(mFeedList.size()<=0){
+            return;
+        }
         if( mMinFeedId <=0 || mMinFeedId >mFeedList.get(mFeedList.size()-1).getFeedId() ){
             Log.d("LISTENER","min feed list id updated");
             mMinFeedId=mFeedList.get(mFeedList.size()-1).getFeedId();
@@ -234,6 +238,9 @@ public class DataList implements FeedConstants{
     }
 
     public void updateMaxNewsId(){
+        if(mNewsList.size()<=0){
+            return;
+        }
         if(  mMaxNewsId <mNewsList.get(0).getFeedId()){
             mMaxNewsId =mNewsList.get(0).getFeedId();
         }
@@ -242,6 +249,9 @@ public class DataList implements FeedConstants{
 
     //sets the mMaxEventId to its proper value
     public void updateMaxEventId(){
+        if(mEventList.size()<=0){
+            return;
+        }
         if( mMaxEventId<mEventList.get(0).getFeedId() ){
             mMaxEventId=mEventList.get(0).getFeedId();
         }
@@ -251,6 +261,9 @@ public class DataList implements FeedConstants{
     //sets the mMaxFeedId to its proper value
     public void updateMaxFeedId(){
 
+        if(mFeedList.size()<=0){
+            return;
+        }
         if( mMaxFeedId<mFeedList.get(0).getFeedId() ){
             mMaxFeedId=mFeedList.get(0).getFeedId();
         }
