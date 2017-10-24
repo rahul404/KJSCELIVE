@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.enzo.kjscelive.firebaseUtils.realtimeDatabase.DatabaseCommunicator;
+
 import java.util.ArrayList;
 
 
@@ -23,7 +25,7 @@ import java.util.ArrayList;
 public class DetailedFeedFragment extends Fragment implements FeedConstants{
     private static final String ARGUMENT_INDEX="com.example.enzo.kjscelive.DetailedFeedFragment.INDEX";//key to hold index of feed in list
     private static final String ARGUMENT_LIST_TYPE="com.example.enzo.kjscelive.DetailedFeedFragment.LIST_TYPE";//denotes type of list where the feed belongs to
-    private Feed mFeed;//holds the feed whose information is renderred on the screen
+    private Feed mFeed;//holds the feed whose information is rendered on the screen
     //returns instance of DetailedFeedFragment instance with argument appropriately set
     public static DetailedFeedFragment newInstance(int index,int listType){
         Bundle args = new Bundle();
@@ -211,6 +213,17 @@ public class DetailedFeedFragment extends Fragment implements FeedConstants{
                     mFeed.setLiked(true);
                 }
                 changeFavoriteIcon(favoriteImage);
+                DatabaseCommunicator databaseCommunicator = DatabaseCommunicator.newInstance(getActivity());
+                databaseCommunicator.performLike(mFeed.getFeedId(),mFeed.isLiked());
+                Bundle args = getArguments();
+                int index=0;
+                int listType=SHOW_CARDS;
+                if(args != null){
+                    index= args.getInt(ARGUMENT_INDEX);
+                    listType=args.getInt(ARGUMENT_LIST_TYPE);
+                }
+                //this line of code will update the like status of current feed if present in other list
+                DataList.getInstance(getActivity()).updateLikeStatus(index,listType);
             }
         });
     }

@@ -377,6 +377,58 @@ public class DataList implements FeedConstants{
     public long getMinEventId() {
         return mMinEventId;
     }
+
+    private int findFeedFromList(Feed key,int type){
+        List<Feed> list = getList(type);
+        //check if the key.id is present in the list
+        if(key.getFeedId()<list.get(list.size()-1).getFeedId() || key.getFeedId()>list.get(0).getFeedId()){
+            return -1;
+        }
+        int lb = 0;
+        int ub = list.size();
+        int mid;
+        while(lb<ub){
+            mid = (lb+ub)/2;
+            if(key.getFeedId() == list.get(mid).getFeedId()){
+                return mid;
+            }
+            else if(key.getFeedId() > list.get(mid).getFeedId()){
+                ub = mid;
+            }
+            else{
+                lb = mid;
+            }
+        }
+        return -1;
+    }
+    private void changeLikeStatus(int target,int type,boolean liked){
+        if(target != -1){
+            getList(type).get(target).setLiked(liked);
+        }
+    }
+    /*
+    *this method is responsible for updating the like status of redundant feeds inside the 3 lists
+    * If the type is SHOW_CARDS, then the function searches for the same card in other list
+    * depending upon the isNews status
+    * If list type is a NEWS or EVENT, the function searches if it is present in the SHOW_CARDS*/
+    public void updateLikeStatus(int index,int type){
+        Feed feed = getList(type).get(index);
+        int target = -1;
+        if(type == SHOW_CARDS){
+            if(feed.isNews()){
+                target = findFeedFromList(feed,SHOW_NEWS);
+                changeLikeStatus(target,SHOW_NEWS,feed.isLiked());
+            }
+            else{
+                target = findFeedFromList(feed,SHOW_EVENTS);
+                changeLikeStatus(target,SHOW_EVENTS,feed.isLiked());
+            }
+        }
+        else if (type == SHOW_NEWS || type == SHOW_CARDS){
+            target = findFeedFromList(feed,SHOW_CARDS);
+            changeLikeStatus(target,SHOW_CARDS,feed.isLiked());
+        }
+    }
     //returns the list containing students body info
     public ArrayList<StudentBody> getStudentBodies(){
         return mStudentBodies;
@@ -385,5 +437,4 @@ public class DataList implements FeedConstants{
     public void addToStudentBodies(StudentBody studentBody){
         mStudentBodies.add(studentBody);
     }
-
 }
