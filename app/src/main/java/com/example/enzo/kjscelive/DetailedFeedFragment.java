@@ -195,10 +195,10 @@ public class DetailedFeedFragment extends Fragment implements FeedConstants{
         final ImageView favoriteImage = (ImageView) v.findViewById(R.id.circled_favorite);
         final String email = IpClass.getInstance().getEmail();
         if(email !=null || email.length()!=0){
-            Toast.makeText(getActivity(),"email = "+email,Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(),"email = "+email,Toast.LENGTH_SHORT).show();
         }
         else{
-            Toast.makeText(getActivity(),"email = nul h bro",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(),"email = nul h bro",Toast.LENGTH_SHORT).show();
         }
         changeFavoriteIcon(favoriteImage);
         favoriteImage.setOnClickListener(new View.OnClickListener() {
@@ -213,7 +213,8 @@ public class DetailedFeedFragment extends Fragment implements FeedConstants{
                     mFeed.setLiked(true);
                 }
                 changeFavoriteIcon(favoriteImage);
-                DatabaseCommunicator databaseCommunicator = DatabaseCommunicator.newInstance(getActivity());
+                //DatabaseCommunicator databaseCommunicator = DatabaseCommunicator.newInstance(getActivity());
+                DatabaseCommunicator databaseCommunicator = DatabaseCommunicator.newInstance();
                 databaseCommunicator.performLike(mFeed.getFeedId(),mFeed.isLiked());
                 Bundle args = getArguments();
                 int index=0;
@@ -254,6 +255,8 @@ public class DetailedFeedFragment extends Fragment implements FeedConstants{
         initShareIcon(v,imageView);
         initAddToCalendar(v);
         initCircledFavorite(v);
+        DatabaseCommunicator databaseCommunicator = DatabaseCommunicator.newInstance();
+        databaseCommunicator.performViewUpdate(mFeed.getFeedId());
         return v;
     }
 }
