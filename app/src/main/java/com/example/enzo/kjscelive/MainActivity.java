@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                         showToast("mIsNew = "+mIsNew);
                     }
                     startActivity(FeedPagerActivity.newIntent(MainActivity.this));
+                    finish();
                 } else {
                     // User is signed out
                     //Log.d("LoginActivity", "onAuthStateChanged:signed_out");

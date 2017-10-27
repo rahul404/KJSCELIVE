@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.google.gson.annotations.SerializedName;
 
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,9 +32,6 @@ public class Feed implements FeedConstants {
     private String mFeedDate;//date of event/news
     @SerializedName("venue")
     private String mFeedVenue;//venue of the feed
-
-
-
     @SerializedName("publisher")
     private long mFeedPublisherId;//unique id given to the publisher
     @SerializedName("type")
@@ -221,13 +219,16 @@ public class Feed implements FeedConstants {
         return (mFeedType==NEWS_CARDS);
     }
 
+    private String htmlSpecialCharsDecode(String temp){
+        return StringEscapeUtils.unescapeHtml4(temp);
+    }
     public String toString(){
         String title="";
         title=title+mFeedTitle+"\n"+mFeedVenue+"\n"+mFeedContent+"\n"+(isNews());
         return title;
     }
     public void setFeed(JSONObject obj) throws JSONException {
-        setFeedId(obj.getLong("card_id"));
+        /*setFeedId(obj.getLong("card_id"));
         setFeedTitle(obj.getString("title"));
         setFeedPriority(obj.getInt("priority"));
         setFeedContent(obj.getString("content"));
@@ -260,8 +261,48 @@ public class Feed implements FeedConstants {
         }
         else{
             setLiked(true);
+        }*/
+
+
+
+
+        /****************HTML SPECIAL CHARS DECODE****************/
+        setFeedId(obj.getLong("card_id"));
+        setFeedTitle(htmlSpecialCharsDecode(obj.getString("title")));
+        setFeedPriority(obj.getInt("priority"));
+        setFeedContent(htmlSpecialCharsDecode(obj.getString("content")));
+        setFeedDate(htmlSpecialCharsDecode(obj.getString("card_date")));
+        setFeedVenue(htmlSpecialCharsDecode(obj.getString("venue")));
+        setFeedPublisherId(obj.getLong("publisher"));
+        setFeedType(obj.getInt("type"));
+        setFeedHasMultipleImages(obj.getInt("has_multiple_images"));
+        setFeedPublisherName(htmlSpecialCharsDecode(obj.getString("name")));
+        setFeedPublisherEmail(htmlSpecialCharsDecode(obj.getString("email")));
+        Log.d("URL","inside feed url = "+getFeedImageUrl());
+        setFeedCommittee(htmlSpecialCharsDecode(obj.getString("committee_name")));
+        setFeedImageUrl(htmlSpecialCharsDecode(obj.getString("image")));
+        JSONArray tempArray=obj.getJSONArray("link");
+        ArrayList<String> tempList=new ArrayList<>();
+        for(int j=0;j<tempArray.length();j++){
+            tempList.add(htmlSpecialCharsDecode(tempArray.getString(j)));
         }
+        setFeedLinks(tempList);
+        tempArray=obj.getJSONArray("phone_no");
+        tempList=new ArrayList<>();
+        for(int j=0;j<tempArray.length();j++){
+            tempList.add(htmlSpecialCharsDecode(tempArray.getString(j)));
+        }
+        setPhone(tempList);
+        String isLiked = htmlSpecialCharsDecode(obj.getString("is_liked"));
+        if(isLiked.equals("0")){
+            setLiked(false);
+        }
+        else{
+            setLiked(true);
+        }
+
         Log.d("LIKE","liked = "+isLiked()+" json value = "+isLiked);
         Log.i(TAG,"FEED: "+toString());
+
     }
 }
