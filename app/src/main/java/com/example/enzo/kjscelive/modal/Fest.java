@@ -1,17 +1,25 @@
-package com.example.enzo.kjscelive;
+package com.example.enzo.kjscelive.modal;
+
+import com.example.enzo.kjscelive.R;
 
 /**
- * Created by enzo on 8/31/2017.
+ * Created by enzo on 12/16/2017.
  */
 
-public class StudentBody {
-    private String mName;
-    private String mDescription;
-    private int mImage=R.mipmap.ic_launcher;
-    public StudentBody(){
-
+public class Fest {
+    protected String mName;
+    protected String mDescription;
+    protected int mImage= R.mipmap.ic_launcher;
+    protected int mLogo = R.mipmap.ic_fav_orange;
+    public Fest(){
+    }
+    public void setLogo(int logo) {
+        mLogo = logo;
     }
 
+    public int getLogo() {
+        return mLogo;
+    }
     public void setName(String name) {
         mName = name;
     }

@@ -5,27 +5,31 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/about_kjsce"
-            android:icon="@drawable/ic_menu_camera"
             android:title="@string/about_kjsce"/>
         <item
-            android:id="@+id/csi"
-            android:icon="@drawable/ic_menu_share"
-            android:title="@string/csi"/>
+            android:id="@+id/stuco"
+            android:title="@string/stuco"/>
         <item
-            android:id="@+id/ieee"
-            android:icon="@drawable/ic_menu_send"
-            android:title="@string/ieee"/>
+            android:id="@+id/councils"
+            android:title="@string/councils"/>
         <item
-            android:id="@+id/nav_share"
-            android:icon="@drawable/ic_menu_share"
-            android:title="Share"/>
+            android:id="@+id/abhiyantriki"
+            android:title="@string/abhiyantriki"/>
         <item
-            android:id="@+id/nav_send"
-            android:icon="@drawable/ic_menu_send"
-            android:title="Send"/>
+            android:id="@+id/skream"
+            android:title="@string/skream"/>
         <item
-            android:id="@+id/gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/gallery"/>
+            android:id="@+id/shield"
+            android:title="@string/shield"/>
+        <item
+            android:id="@+id/symphony"
+            android:title="@string/symphony"/>
+        <item
+            android:id="@+id/about_us"
+            android:title="@string/about_us"/>
+        <item
+            android:visible="false"
+            android:id="@+id/dummy"
+            android:title="@string/blank"/>
     </group>
 </menu>

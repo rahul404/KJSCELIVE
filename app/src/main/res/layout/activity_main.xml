@@ -5,17 +5,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.enzo.kjscelive.MainActivity"
+    tools:context="com.example.enzo.kjscelive.view.MainActivity"
     android:orientation="vertical">
-    <EditText
-        android:id="@+id/change_ip_editext"
-        android:text="10.0.2.2"
+
+    <ImageView
+        android:src="@mipmap/ic_kjscelive"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="200dp"/>
+    <TextView
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:text="@string/waiting_for_sign_in"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
     <Button
-        android:id="@+id/change_ip_button"
-        android:text="Start App"
+        android:id = "@+id/sign_in_button"
+        android:background="@color/colorLightGray"
+        android:layout_margin="40dp"
+        android:textStyle="normal"
+        android:textSize="30sp"
+        android:text="@string/sign_in"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="100dp"/>
+
 
 </LinearLayout>

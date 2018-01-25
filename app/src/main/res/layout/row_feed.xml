@@ -26,7 +26,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:src="@color/colorImageTemp"
+            android:src="@mipmap/ic_launcher"
             android:scaleType="centerCrop"
             android:layout_marginRight="-6dp"
             android:layout_marginLeft="-6dp"/>
@@ -65,11 +65,12 @@
             android:textColor="@color/colorBrightOrange"
             android:paddingLeft="10dp"/>
 
-        <com.example.enzo.kjscelive.JustifyTextView
+        <com.example.enzo.kjscelive.view.JustifyTextView
             android:id="@+id/feed_event_content_row"
             android:clickable="false"
             android:focusable="false"
             android:layout_marginLeft="7dp"
+            android:layout_marginTop="7dp"
             android:textSize="16sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -83,12 +84,15 @@
             android:text="@string/add_to_calendar"
             android:layout_alignParentRight="true"
             android:orientation="horizontal"
-            android:layout_below="@id/feed_event_content_row">
+            android:layout_below="@id/feed_event_content_row"
+            android:layout_marginRight="7dp"
+            android:layout_marginBottom="7dp">
             <ImageView
                 android:id="@+id/feed_event_add_to_calendar_row"
                 android:src="@mipmap/ic_calendar"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_marginRight="7dp"
                 />
             <ImageView
                 android:id="@+id/feed_event_share_row"

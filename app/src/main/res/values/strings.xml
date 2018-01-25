@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">KJSCELIVE</string>
+    <string name="sign_in">Sign In</string>
+    <string name="waiting_for_sign_in">Waiting for sign in...</string>
+    <string name="app_name">KJSCE Live</string>
     <string name="demo_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
         ornare enim diam, vel convallis odio placerat condimentum. In convallis tincidunt diam, eu
         tristique est convallis sed. Suspendisse accumsan, turpis a ornare aliquam, </string>
@@ -21,11 +23,107 @@
     <string name="share_intent_extra_text">Put this text here to share something </string>
     <string name="share_intent_dialog_message">Put message here for sharing dialogue</string>
     <string name="about_kjsce">About KJSCE</string>
+    <string name = "about_kjsce_hello">Set in the heart of the city, K.J Somaiya College of Engineering is located in the Somaiya campus at Vidyavihar. Catering to about 40,000 students every day, this campus offers diverse fields of education such as Engineering, Management, Commerce, Arts, and Sciences. Along with numerous institutes, Somaiya Vidyavihar also boasts of a campus covering 65 acres. Being granted Autonomous status from the academic year 2014-15, K.J, Somaiya College of Engineering also enjoys the status of being graded ‘A’ by the NAAC (National Assessment and Accreditation Council)</string>
+    <string name = "councils">Councils</string>
     <string name="stuco">Student Council</string>
+    <string name = "about_us">About Us</string>
+    <string name = "blank"></string>
     <string name="technical">Technical</string>
-    <string name="csi">CSI</string>
-    <string name="ieee">IEEE</string>
+    <string name="cultural">Cultural</string>
+    <string name="other">Other</string>
     <string name="couldnt_refresh">Couldn\'t Refresh. Please try again later </string>
     <string name="gallery">Gallery</string>
+    <string name="title_activity_student_bodies_main">StudentBodiesMainActivity</string>
+
+    <string name="csi_hello">The CSI – KSJCE council is formed from the student members every year. They work under the guidance of their faculty advisors. There are a number of technical and non-technical activities conducted, which include Workshops, Project competitions, Technical Talks on the latest trends in industry, etc. It is one of the biggest student bodies (in terms of number of members) at K. J. Somaiya College of Engineering, Mumbai.</string>
+    <string name="csi">CSI</string>
+
+    <string name="codecell_hello">Codecell was started with an ambition to encourage students to take up competitive coding and create a conducive atmosphere for the same in K. J. Somaiya College of Engineering. Over the years, codecell has successfully prepared students for competitions such as the ACM ICPC.</string>
+    <string name="codecell">Codecell</string>
+
+    <string name="ieee_hello">Institue of Electrical and Electronics Engineers (IEEE) is another technical student branch council of KJSCE. A constant support by faculty heads and the initatives taken by the council members provide a huge boost to the students interested into core sections of electronics and coding. Technical Paper Presentation, organized by IEEE over the years, has been a hit show during Abhiyantriki. </string>
+    <string name="ieee">IEEE</string>
+
+    <string name="eesa_hello">Electronics Engineering Student Association (EESA) is the departmental Council of Electronics branch of KJSCE. EESA conducts various workshops, activities and events to enhance the outreach of the field of Electronics. Technical workshops and seminars on trending topics like IoT, Raspberry pi, Arduino have been successfully conducted and other plans are in the process of execution. The Blog and Annual Magazine \'Periscope\', play a vital role in documenting and develop a technical perspective in the area of writing.    </string>
+    <string name="eesa">EESA</string>
+
+    <string name="mesa_hello">The Mechanical Engineering Students’ Association, a student organization, was founded in the year 2000. It is an organization which conducts technical events, seminars and industrial visits all round the year, making aspiring mechanical engineers more competent, active and perceptive and also gives them an insight into the field of study, research and development. G-Force, an annual technical festival is organized by MESA.</string>
+    <string name="mesa">MESA</string>
+
+    <string name="ishrae_hello">The Society of Automotive Engineers is a non-profit educational and scientific organization. This society is concerned with the development of reference standards, technical data, and advancement of technology for the field of mobility vehicle systems. The standards decided by SAE are accepted widely in the field of transportation and mechanical engineering. </string>
+    <string name="ishrae">ISHRAE</string>
+
+    <string name="iete_hello">Institue of Electronics and Telecommunication Engineer\'s is the departmental student body of Electronics and Telecommunication branch. The Council administers various co-curricular activities which is an add-on to the exsiting study pattern in form of either technical events or workshops. Mentored by highly trained faculty members and supported by the departmental pupil strengthens the exsisting foundation of IETE Council. </string>
+    <string name="iete">IETE</string>
+
+    <string name="iste_hello">Indian Society For Technical Education (ISTE) is a leading professional and student-based society in KJSCE. Students from every branch are by default members of ISTE and can avail to the opportunities being laid by the council in form of various workshops and programmes. ISTE focuses on building an overall technical context, irrespective of one\'s department. </string>
+    <string name="iste">ISTE</string>
+
+    <string name="sahas_hello">SAHAS is the youngest student council of KJSCE which provides the great experience to work for the other student bodies. It also gives the platform for the enthusiastic students to conduct different activities related to nation, culture, traditions, social issues as well as technical aspects.</string>
+    <string name="sahas">SAHAS</string>
+
+    <string name="emfinity_hello">Emfinity is the Math Club of K. J. Somaiya College of Engineering. They organize treasure hunts, quizzes, and other fun events, that make Mathematics quite interesting, even for numerophobes!</string>
+    <string name="emfinity">Emfinity</string>
+
+    <string name="orion_hello">Orion Racing Team is a student-run, non-profit racing team based in KJSCE. It is a team of budding engineering students from various streams and they develop, design, and manufacture a formula style car to take part in International Design Competitions organized by Formula SAE, most notably FSG (Formula Student Germany). Consistently adjudged the best Indian Team at FSG, Orion Racing India has brought the college and country laurels and accolades for its performances at the world level. Since 2006, Orion Racing India has come a long way from a hobby idea to a semi-professional project par excellence.</string>
+    <string name="orion">Orion</string>
+
+    <string name="redshift_hello">Started in 2009, Red Shift Racing’s key motive is to compete with top teams all over the globe in an SAE organized Baja event. Red Shift Racing has since, come a long way from a hobby idea to a semi-professional project par excellence, having participated in SAE BAJA Auburn event held at USA in the year 2012 and SAE BAJA Indore Event held at INDORE in 2013.</string>
+    <string name="redshift">Redshift</string>
+
+    <string name="eta_hello">Team Eta is the fuel efficiency automotive team of KJ Somaiya College of Engineering. Team Eta is a 5-year-old student run project and is the proud maker of Jugaad’13, J-14, Arya, and Triton, the Super-mileage prototype vehicles which participated in SEM Asia 2013, 2014, 2015, and 2017. The team aims towards designing and fabricating the most fuel efficient prototype cars which participate in the Shell Eco Marathon Asia, held annually.</string>
+    <string name="eta">Eta</string>
+
+    <string name="onyx_hello">Team Onyx is a team of zealous mechanical engineering students from K.J. Somaiya College of Engineering with sound technical knowledge and a creative mind frame. They are dedicated to the hobby of aeromodelling. It was established in year 2011 for the design and manufacture of radio controlled, heavy lifting aircraft model. The team represents the college every year at an international aeromodelling competition named “SAE Aero Design West” in the USA. It’s a platform for students to exhibit their practical knowledge and develop them as confident individuals for a stronger tomorrow.</string>
+    <string name="onyx">Onyx</string>
+
+    <string name="robocon_hello">KJSCE Robocon is a team dedicated to the field of robotics. Founded in 2010 by group of students, Team KJSCE Robocon has paved the way for young intelligent minds to practice and implement new and innovative designs in modern day robotics. With the sole agenda of winning Robocon India- a National-level robotics competition, they intend to represent India at the international level. With a national rank of 10 in the year 2012, the strength and appeal of Team KJSCE Robocon is reaching new heights.</string>
+    <string name="robocon">Robocon</string>
+
+    <string name="insignia_hello">Insignia is the official Art Team of KJSCE. Insignia is responsible for all the decorations during various extra-curricular events throughout the year. Right from the freshers\' event, to the B.E. Farewell, they have painted and sketched it all, while their decor turns Abhiyantriki, Skream, and Symphony arenas into masterpieces.</string>
+    <string name="insignia">Insignia</string>
+
+    <string name="rhapsody_hello">Rhapsody is the official drama team of K.J. Somaiya College of Engineering. They perform various types of dramas, and have won many accolades for the college. Every year, they perform plays that are based on the topic taken by Parvaah, the social initiative of the college. </string>
+    <string name="rhapsody">Rhapsody</string>
+
+    <string name="gyrations_hello">Team Gyrations is a dance team formed in K.J. Somaiya College Of Engineering, Vidyavihar winning prizes and critical acclaim in many dance competitions across Mumbai, since 2005 till date.</string>
+    <string name="gyrations">Gyrations</string>
+
+    <string name="octavium_hello">Octavium is the official music team of K.J. Somaiya College Of Engineering. They perform during Symphony, Freshers\' Eve, B.E. farewell, and in many other events throughout the year.</string>
+    <string name="octavium">Octavium</string>
+
+    <string name="illuminati_hello">The literary Club of KJSCE, Illuminati, is born of the yearning for knowledge in all its forms. Illuminati hosts regular meets, where they discuss art and literature, economics, entertainment, philosophy, politics, science and sports, coupled with fun ice-breaking games. Illuminati also hiuses under its wing, the young debating society of the college.</string>
+    <string name="illuminati">Illuminati</string>
+
+    <string name="mindbenders_hello">The aim of Mindbenders is to create a great quizzing atmosphere in K.J. Somaiya College of Engineering. They conduct quizzes on various domains throughout the year, and organize events such as the Somaiya Crucible, Ubiquiztous, and the Shield Quiz.  </string>
+    <string name="mindbenders">Mindbenders</string>
+
+    <string name="shutterbugs_hello">KJSCE Shutter Bugs is a platform for photographers at K.J. Somaiya College of Engineering– professional as well as amateur – to improve their photography skills. They cover all the events and festivals that are conducted throughout the year.</string>
+    <string name="shutterbugs">Shutterbugs</string>
+
+    <string name="bloombox_hello">BloomBox is the entrepreneurship cell of K.J. Somaiya College of Engineering. BloomBox is intended as a platform to motivate and educate students about entrepreneurship and encourage them to flesh out their ideas in business terms and form global enterprises that combine technology, vision, and business acumen.</string>
+    <string name="bloombox">Bloombox</string>
+
+    <string name="alumni_cell_hello">The Alumni Cell was conceptualised with a vision to initiate and maintain productive and mutual relationships with the esteemed Alumni of the college using all available online and offline means extensively. It was also started, so as to build a bridge of communication for the alumni to interact and connect with the students to mentor them about career and life.</string>
+    <string name="alumni_cell">Alumni Cell</string>
+
+    <string name="push_hello">People United for Student Help (P.U.S.H), is a group of faculty, staff and students, who provide assistance to students who are financially challenged and are unable to pay college fee.</string>
+    <string name="push">P.U.S.H.</string>
+
+    <string name="kshitij_hello">Kshitij is the annual periodical of K.J. Somaiya College of Engineering. Over the years, it has become the voice of the college, documenting all events throughout the academic year, as well as becoming a platform for students to showcase their writing.</string>
+    <string name="kshitij">KSHITIJ</string>
+    
+    <string name="parvaah_hello">Parvaah, is the social initiative of K. J. Somaiya College of Engineering. It is inspired by the idea of giving back to the society. Parvaah was started with a mission to send a message with a social cause through festivals and events. Each year KJSCE undertakes social initiatives based on relevant issues in the society</string>
+    <string name="parvaah">PARVAAH</string>
+    
+    <string name="shield_hello">The Shield is the official trophy of the college, which is given to the branch that excels in all manner of extra-curricular activities, be it Technical, Sports, or Cultural. The branch that garners maximum points throughout the year emerges victorious.</string>
+    <string name="shield">SHIELD</string>
+    
+    <string name="abhiyantriki_hello">Abhiyantriki, which stands for ‘Engineering’ in Sanskrit, is the annual technical festival of the K.J. Somaiya College of Engineering. Abhiyantriki was born out of the desire to inspire and nurture bright minds in the field of technology, and hosts premier events like Tech Expo, Startup Expo, Internship Expo, and Auto Expo along with scintillating Speaker and Panel Sessions, and various technical and informal competitions.\nhttp://kjsce-abhiyantriki.org</string>
+    <string name="abhiyantriki">ABHIYANTRIKI</string>
+    <string name="skream_hello">KJSCE Skream, a National-level annual Sports Festival, started off in 2014 with the sole purpose of putting passion and spirit of sports on the platform they deserve. Hosting 15 indoor and outdoor sports, Skream has become a name to be remembered by sports fanatics.\nhttp://kjsce-skream.org/</string>
+    <string name="skream">SKREAM</string>
+    <string name="symphony_hello">Symphony is the annual cultural festival of KJSCE. Starting out in 1987 as Jamboree, Symphony has come a long way. A mix with all the right ingredients to foster creativity and originality, Symphony is a rendezvous for all the art geeks, drama buffs, music aficionados, literary fanatics, and dance enthusiasts.\nhttp://kjsce-symphony.org</string>
+    <string name="symphony">SYMPHONY</string>
 
 </resources>
