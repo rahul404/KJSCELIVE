@@ -15,10 +15,14 @@ public class CulturalStudentBodyList extends StudentBodyList<CulturalStudentBody
 
         //code to add councils
         CulturalStudentBody body = new CulturalStudentBody();
+        body.setImage(R.mipmap.insignia_cover);
+        body.setLogo(R.mipmap.insignia_logo);
         body.setName(mContext.getString(R.string.insignia));
         body.setDescription(mContext.getString(R.string.insignia_hello));
         add(body);
         body = new CulturalStudentBody();
+        body.setImage(R.mipmap.rhapsody_cover);
+        body.setLogo(R.mipmap.rhapsody_logo);
         body.setName(mContext.getString(R.string.rhapsody));
         body.setDescription(mContext.getString(R.string.rhapsody_hello));
         add(body);

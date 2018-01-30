@@ -12,6 +12,8 @@ public class Skream extends Fest{
     Skream(Context context){
         mName = context.getString(R.string.skream);
         mDescription = context.getString(R.string.skream_hello);
+        setLogo(R.mipmap.skream_logo);
+        setImage(R.mipmap.skream_cover);
     }
     public static Skream newInstance(Context context){
         Skream skream= new Skream(context);

@@ -6,9 +6,9 @@
     </shape>
     </item>
     <item
-        android:left="3dp">
+        android:left="6dp">
         <shape android:shape="rectangle">
-        <solid android:color="#fafafa"/>
+        <solid android:color="@color/colorDarkGray"/>
         </shape>
     </item>
 </layer-list>

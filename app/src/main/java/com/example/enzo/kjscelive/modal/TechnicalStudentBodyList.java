@@ -15,10 +15,14 @@ public class TechnicalStudentBodyList extends StudentBodyList<TechnicalStudentBo
         //adding new bodies
         TechnicalStudentBody body;
         body = new TechnicalStudentBody();
+        body.setImage(R.mipmap.csi_cover);
+        body.setLogo(R.mipmap.csi_logo);
         body.setName(mContext.getString(R.string.csi));
         body.setDescription(mContext.getString(R.string.csi_hello));
         add(body);
         body = new TechnicalStudentBody();
+        body.setImage(R.mipmap.codecell_cover);
+        body.setLogo(R.mipmap.codecell_logo);
         body.setName(mContext.getString(R.string.codecell));
         body.setDescription(mContext.getString(R.string.codecell_hello));
         add(body);
@@ -27,6 +31,8 @@ public class TechnicalStudentBodyList extends StudentBodyList<TechnicalStudentBo
         body.setDescription(mContext.getString(R.string.ieee_hello));
         add(body);
         body = new TechnicalStudentBody();
+        body.setImage(R.mipmap.eesa_cover);
+        body.setLogo(R.mipmap.eesa_logo);
         body.setName(mContext.getString(R.string.eesa));
         body.setDescription(mContext.getString(R.string.eesa_hello));
         add(body);
@@ -35,10 +41,14 @@ public class TechnicalStudentBodyList extends StudentBodyList<TechnicalStudentBo
         body.setDescription(mContext.getString(R.string.mesa_hello));
         add(body);
         body = new TechnicalStudentBody();
+        body.setLogo(R.mipmap.ishrae_logo);
+        body.setImage(R.mipmap.ishrae_cover);
         body.setName(mContext.getString(R.string.ishrae));
         body.setDescription(mContext.getString(R.string.ishrae_hello));
         add(body);
         body = new TechnicalStudentBody();
+        body.setImage(R.mipmap.iete_cover);
+        body.setLogo(R.mipmap.iete_logo);
         body.setName(mContext.getString(R.string.iete));
         body.setDescription(mContext.getString(R.string.iete_hello));
         add(body);
@@ -51,6 +61,8 @@ public class TechnicalStudentBodyList extends StudentBodyList<TechnicalStudentBo
         body.setDescription(mContext.getString(R.string.sahas_hello));
         add(body);
         body = new TechnicalStudentBody();
+        body.setImage(R.mipmap.emfinity_cover);
+        body.setLogo(R.mipmap.emfinity_logo);
         body.setName(mContext.getString(R.string.emfinity));
         body.setDescription(mContext.getString(R.string.emfinity_hello));
         add(body);
@@ -63,6 +75,8 @@ public class TechnicalStudentBodyList extends StudentBodyList<TechnicalStudentBo
         body.setDescription(mContext.getString(R.string.redshift_hello));
         add(body);
         body = new TechnicalStudentBody();
+        body.setLogo(R.mipmap.eta_logo);
+        body.setImage(R.mipmap.eta_cover);
         body.setName(mContext.getString(R.string.eta));
         body.setDescription(mContext.getString(R.string.eta_hello));
         add(body);

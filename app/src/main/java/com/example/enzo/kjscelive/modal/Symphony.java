@@ -12,6 +12,8 @@ public class Symphony extends Fest{
     Symphony(Context context){
         mName = context.getString(R.string.symphony);
         mDescription = context.getString(R.string.symphony_hello);
+        setLogo(R.mipmap.symphony_logo);
+        setImage(R.mipmap.symphony_cover);
     }
     public static Symphony newInstance(Context context){
         Symphony symphony = new Symphony(context);

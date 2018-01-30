@@ -20,8 +20,10 @@
         android:layout_height="match_parent"
         android:layout_gravity="right"
         android:fitsSystemWindows="true"
+        android:background="@color/colorMediumGray"
         app:headerLayout="@layout/nav_header_feed_pager_activity"
         app:menu="@menu/activity_feed_pager_activity_drawer"
         app:itemBackground="@drawable/menu_item_background_state"
+        app:itemTextColor="@color/colorLightGray"
         android:layout_marginBottom="0dp"/>
 </android.support.v4.widget.DrawerLayout>

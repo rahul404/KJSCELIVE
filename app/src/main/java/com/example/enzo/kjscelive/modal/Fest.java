@@ -9,8 +9,8 @@ import com.example.enzo.kjscelive.R;
 public class Fest {
     protected String mName;
     protected String mDescription;
-    protected int mImage= R.mipmap.ic_launcher;
-    protected int mLogo = R.mipmap.ic_fav_orange;
+    protected int mImage= R.mipmap.student_body_default_cover;
+    protected int mLogo = R.mipmap.student_body_default_logo;
     public Fest(){
     }
     public void setLogo(int logo) {
