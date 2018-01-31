@@ -13,7 +13,20 @@ public class MiscellaneousStudentBodyList extends StudentBodyList<MiscellaneousS
     private MiscellaneousStudentBodyList(Context context) {
         super(context);
         //code to add councils
-        MiscellaneousStudentBody body = new MiscellaneousStudentBody();
+        MiscellaneousStudentBody body;
+        body = new MiscellaneousStudentBody();
+        body.setName(mContext.getString(R.string.parvaah));
+        body.setDescription(mContext.getString(R.string.parvaah_hello));
+        add(body);
+        body = new MiscellaneousStudentBody();
+        body.setName(mContext.getString(R.string.kshitij));
+        body.setDescription(mContext.getString(R.string.kshitij_hello));
+        add(body);
+        body = new MiscellaneousStudentBody();
+        body.setName(mContext.getString(R.string.push));
+        body.setDescription(mContext.getString(R.string.push_hello));
+        add(body);
+        body = new MiscellaneousStudentBody();
         body.setImage(R.mipmap.shutterbugs_cover);
         body.setLogo(R.mipmap.shutterbugs_logo);
         body.setName(mContext.getString(R.string.shutterbugs));
@@ -30,18 +43,6 @@ public class MiscellaneousStudentBodyList extends StudentBodyList<MiscellaneousS
         body.setLogo(R.mipmap.alumni_cell_logo);
         body.setName(mContext.getString(R.string.alumni_cell));
         body.setDescription(mContext.getString(R.string.alumni_cell_hello));
-        add(body);
-        body = new MiscellaneousStudentBody();
-        body.setName(mContext.getString(R.string.push));
-        body.setDescription(mContext.getString(R.string.push_hello));
-        add(body);
-        body = new MiscellaneousStudentBody();
-        body.setName(mContext.getString(R.string.kshitij));
-        body.setDescription(mContext.getString(R.string.kshitij_hello));
-        add(body);
-        body = new MiscellaneousStudentBody();
-        body.setName(mContext.getString(R.string.parvaah));
-        body.setDescription(mContext.getString(R.string.parvaah_hello));
         add(body);
     }
 

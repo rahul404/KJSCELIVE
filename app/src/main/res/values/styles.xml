@@ -47,4 +47,16 @@
         <!--<item name="android:textColor">@color/orange</item>-->
         <item name="textAllCaps">true</item>
     </style>
+
+    <style name="LicensesTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="LicensesTextView.LicensesHeader" >
+        <item name="android:textSize">35sp</item>
+    </style>
+    <style name="LicensesTextView.LicensesBody" >
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorMediumBlack</item>
+    </style>
 </resources>

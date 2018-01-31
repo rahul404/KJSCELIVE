@@ -88,6 +88,10 @@ public class TechnicalStudentBodyList extends StudentBodyList<TechnicalStudentBo
         body.setName(mContext.getString(R.string.robocon));
         body.setDescription(mContext.getString(R.string.robocon_hello));
         add(body);
+        body = new TechnicalStudentBody();
+        body.setName(mContext.getString(R.string.mindbenders));
+        body.setDescription(mContext.getString(R.string.mindbenders_hello));
+        add(body);
     }
 
     public static TechnicalStudentBodyList getInstance(Context context){

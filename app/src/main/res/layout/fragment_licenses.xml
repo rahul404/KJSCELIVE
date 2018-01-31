@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <TextView
+        style="@style/LicensesTextView.LicensesHeader"
+        android:text="@string/picasso"/>
+    <TextView
+        style="@style/LicensesTextView.LicensesBody"
+        android:text="@string/picasso_hello"/>
+    <TextView
+        style="@style/LicensesTextView.LicensesHeader"
+        android:text="@string/gson"/>
+    <TextView
+        style="@style/LicensesTextView.LicensesBody"
+        android:text="@string/gson_hello"/>
+    <TextView
+        style="@style/LicensesTextView.LicensesHeader"
+        android:text="@string/circleimageview"/>
+    <TextView
+        style="@style/LicensesTextView.LicensesBody"
+        android:text="@string/circleimageview_hello"/>
+
+</LinearLayout>

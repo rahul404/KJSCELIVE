@@ -10,9 +10,6 @@
             android:id="@+id/about_kjsce"
             android:title="@string/about_kjsce"/>
         <item
-            android:id="@+id/stuco"
-            android:title="@string/stuco"/>
-        <item
             android:id="@+id/councils"
             android:title="@string/councils"/>
         <item
@@ -30,6 +27,9 @@
         <item
             android:id="@+id/about_us"
             android:title="@string/about_us"/>
+        <item
+            android:id="@+id/licenses"
+            android:title="@string/licenses"/>
         <item
             android:visible="false"
             android:id="@+id/dummy"

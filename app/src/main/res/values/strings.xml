@@ -14,7 +14,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
+    <string name="kj_somaiya">K.J. Somaiya College of Engineering</string>
     <string name="action_settings">Settings</string>
     <string name="calendar_event_description">Added by the KJSCELIVE app</string>
     <string name="title_activity_detailed_feed_view_pager">DetailedFeedViewPagerActivity</string>
@@ -24,10 +24,11 @@
     <string name="share_intent_dialog_message">Put message here for sharing dialogue</string>
     <string name="home">Home</string>
     <string name="about_kjsce">About KJSCE</string>
-    <string name = "about_kjsce_hello">Set in the heart of the city, K.J. Somaiya College of Engineering is located in the Somaiya campus at Vidyavihar. Catering to about 40,000 students every day, this campus offers diverse fields of education such as Engineering, Management, Commerce, Arts, and Sciences. Along with numerous institutes, Somaiya Vidyavihar also boasts of a campus covering 65 acres. Being granted Autonomous status from the academic year 2014-15, K.J. Somaiya College of Engineering also enjoys the status of being graded ‘A’ by the NAAC (National Assessment and Accreditation Council).</string>
+    <string name = "about_kjsce_hello">Set in the heart of the city, K.J. Somaiya College of Engineering is located in the Somaiya campus at Vidyavihar. Catering to about 40,000 students every day, this campus offers diverse fields of education such as Engineering, Management, Commerce, Arts, and Sciences. Along with numerous institutes, Somaiya Vidyavihar also boasts of a campus covering 65 acres. Being granted Autonomous status from the academic year 2014-15, K.J. Somaiya College of Engineering also enjoys the status of being graded ‘A’ by the NAAC (National Assessment and Accreditation Council).\nTo find out more:\nhttps://www.somaiya.edu/kjsce</string>
     <string name = "councils">Councils</string>
     <string name="stuco">Student\'s Council</string>
-    <string name = "about_us">About Us</string>
+    <string name = "about_us">About app</string>
+    <string name = "licenses">Licenses</string>
     <string name = "blank"></string>
     <string name="technical">Technical</string>
     <string name="cultural">Cultural</string>
@@ -117,7 +118,7 @@
     <string name="parvaah_hello">Parvaah is the social initiative of K.J. Somaiya College of Engineering. It is inspired by the idea of giving back to the society. Parvaah was started with a mission to send a message with a social cause through festivals and events. Every year KJSCE undertakes social initiatives based on relevant issues in society.For the year 2017-18, Parvaah has taken up the cause of Health and Sanitation.</string>
     <string name="parvaah">Parvaah</string>
     
-    <string name="shield_hello">The Shield is the official trophy of the college, which is given to the branch that excels in all manner of extra-curricular activities, be it Technical, Sports, or Cultural. The branch that garners maximum points throughout the year emerges victorious.</string>
+    <string name="shield_hello">The Shield is the official trophy of the college, which is given to the branch that excels in all manner of extra-curricular activities, be it technical, sports, or cultural. The branch that garners maximum points throughout the year emerges victorious.</string>
     <string name="shield">Shield</string>
     
     <string name="abhiyantriki_hello">Abhiyantriki, which stands for ‘Engineering’ in Sanskrit, is the annual technical festival of the K.J. Somaiya College of Engineering. Abhiyantriki was born out of the desire to inspire and nurture bright minds in the field of technology, and hosts premier events like Tech Expo, Startup Expo, Internship Expo, and Auto Expo along with scintillating Speaker and Panel Sessions, and various technical and informal competitions.\nTo find out more:\nhttp://kjsce-abhiyantriki.org</string>
@@ -127,4 +128,54 @@
     <string name="symphony_hello">Symphony is the annual cultural festival of KJSCE. Starting out in 1987 as Jamboree, Symphony has come a long way. A mix with all the right ingredients to foster creativity and originality, Symphony is a rendezvous for all the art geeks, drama buffs, music aficionados, literary fanatics, and dance enthusiasts.\nTo find out more:\nhttp://kjsce-symphony.org</string>
     <string name="symphony">Symphony</string>
 
+    <string name="about_us_hello">The KJSCE Live app was conceptualized keeping in mind the need to have a centralized information source as well as a noticeboard for all things related to the college. Information about all college student bodies and activities is made available on the platform, as well as news relevant to students.\nThis application is developed and maintained by KJSCE Students’ Council. The Students’ Council is the primary student body of the college that works towards the major events in the academic year, including Abhiyantriki, Skream, and Symphony, and everything in between.\nTo find out more:\nhttps://kjscelive.wordpress.com</string>
+
+
+    <string name="picasso"><u>Picasso</u></string>
+    <string name="picasso_hello">Copyright 2013 Square, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+    </string>
+    
+    <string name="gson"><u>Gson</u></string>
+    <string name="gson_hello">Copyright 2008 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+    </string>
+    
+    <string name="circleimageview"><u>CircleImageView</u></string>
+    <string name="circleimageview_hello">Copyright 2014 - 2017 Henning Dodenhof
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+    </string>
 </resources>
