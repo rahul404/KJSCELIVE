@@ -11,12 +11,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
-    <com.example.enzo.kjscelive.view.JustifyTextView
+    <!--<com.example.enzo.kjscelive.view.JustifyTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="@string/kj_somaiya"
         android:textSize="25sp"
         android:textColor="@color/colorBrightOrange"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"/>-->
 </LinearLayout>

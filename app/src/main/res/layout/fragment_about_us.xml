@@ -18,7 +18,7 @@
                 android:id="@+id/cover_image"
                 android:layout_width="match_parent"
                 android:layout_height="280dp"
-                app:srcCompat="@mipmap/council_cover"
+                app:srcCompat="@mipmap/navigation_drawer_img"
                 android:scaleType="centerCrop"/>
             <View
                 android:layout_width="match_parent"
@@ -43,7 +43,7 @@
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:layout_gravity="center"
-                        android:src="@mipmap/student_council_logo"/>
+                        android:src="@mipmap/ic_launcher"/>
                 </LinearLayout>
             </FrameLayout>
         </RelativeLayout>

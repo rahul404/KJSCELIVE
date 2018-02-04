@@ -12,7 +12,8 @@ public class Kjsce extends Fest{
     Kjsce(Context context){
         mName = context.getString(R.string.about_kjsce);
         mDescription = context.getString(R.string.about_kjsce_hello);
-        mLogo = R.mipmap.student_body_default_logo;
+        mLogo = R.mipmap.about_kjsce_logo;
+        mImage = R.mipmap.about_kjsce_cover;
     }
     public static Kjsce newInstance(Context context){
         Kjsce kjsce = new Kjsce(context);

@@ -12,6 +12,8 @@ public class Shield extends Fest{
     Shield(Context context){
         mName = context.getString(R.string.shield);
         mDescription = context.getString(R.string.shield_hello);
+        mImage = R.mipmap.shield_cover;
+        mLogo = R.mipmap.shield_logo;
     }
     public static Shield newInstance(Context context){
         Shield shield = new Shield(context);

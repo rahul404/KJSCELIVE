@@ -7,8 +7,8 @@
                 android:layout_height="wrap_content"
                 card_view:cardElevation="16dp"
                 card_view:cardCornerRadius="2dp"
-                android:layout_marginRight="4dp"
-                android:layout_marginLeft="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginBottom="24dp">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
