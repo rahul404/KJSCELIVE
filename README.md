@@ -1,6 +1,6 @@
 <h1> KJSCE Live </h1>
 <p> Best Event guide for your campus. Find things to do, activities & events near you. </p>
-Google Playstore : <a href="https://play.google.com/store/apps/details?id=org.kjscesymphony.enzo.kjscelive"> </a>
+<p><a href="https://play.google.com/store/apps/details?id=org.kjscesymphony.enzo.kjscelive">Google Playstore </a></p>
 <h2>Screenshots</h2>
 <div>
   <table>
